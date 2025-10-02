@@ -1,0 +1,13 @@
+# React frontend
+reactapp1/node_modules/
+reactapp1/build/
+reactapp1/.env
+
+# Spring Boot backend
+Backend/target/
+Backend/.env
+
+# OS and editor files
+.DS_Store
+.vscode/
+*.log
