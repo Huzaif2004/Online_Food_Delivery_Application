@@ -39,12 +39,13 @@ Online_Food_Delivery_Application/
 
 ---
 
-### 1️⃣ Clone the repository
+1️⃣ Clone the repository
 ```bash
 git clone https://github.com/Huzaif2004/Online_Food_Delivery_Application.git
 cd Online_Food_Delivery_Application
 
 2️⃣ Run the Backend
+
 cd Backend
 mvn spring-boot:run
 
