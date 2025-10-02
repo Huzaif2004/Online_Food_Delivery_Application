@@ -1,0 +1,107 @@
+.seldiet-plan-details {
+    padding: 20px;
+    background-color: #fff; /* White background for the diet plan details */
+    border-radius: 8px; /* Rounded corners for the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for a subtle 3D effect */
+    margin: 20px; /* Margin around the container */
+}
+
+.seldiet-plan-details h2 {
+    font-family: 'Gilroy_Bold', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: rgba(2, 6, 12, 0.92);
+    margin-bottom: 10px;
+}
+
+.seldiet-plan-details p {
+    font-family: 'Gilroy', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.seldiet-menu-images {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.seldiet-menu-item {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.seldiet-menu-item:hover {
+    transform: scale(1.05);
+}
+
+.seldiet-menu-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.seldiet-menu-info {
+    text-align: left;
+}
+
+.seldiet-menu-info h3 {
+    font-family: 'Gilroy_Bold', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: rgba(2, 6, 12, 0.92);
+    margin: 10px 0;
+}
+
+.seldiet-menu-info p {
+    font-family: 'Gilroy', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    margin: 4px 0;
+}
+
+.add-to-cart-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-family: 'Gilroy_Bold', sans-serif;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.add-to-cart-button:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 1200px) {
+    .seldiet-menu-images {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .seldiet-menu-images {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 650px) {
+    .seldiet-menu-images {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}

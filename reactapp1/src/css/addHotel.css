@@ -1,0 +1,81 @@
+/* Container for the form */
+.form1-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+/* Form heading */
+.form1-container h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Input fields */
+.form1-container input {
+  width: calc(100% - 22px);
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+/* Buttons */
+.form1-container button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.parent-form1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+/* Button hover effects */
+.form1-container button:hover {
+  background-color: #0056b3;
+}
+
+/* Add Menu Item Button */
+.add-menu-item-button {
+  background-color: #28a745;
+}
+
+.add-menu-item-button:hover {
+  background-color: #218838;
+}
+
+/* Toggle Menu Fields Button */
+.toggle-menu-fields {
+  background-color: #ffc107;
+  margin-top: 10px;
+}
+
+.toggle-menu-fields:hover {
+  background-color: #e0a800;
+}
+
+/* Link to delete hotel */
+.delete-link {
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+  color: #dc3545;
+  text-decoration: none;
+}
+
+.delete-link:hover {
+  text-decoration: underline;
+}

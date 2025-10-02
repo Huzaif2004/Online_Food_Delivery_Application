@@ -1,0 +1,160 @@
+.profile-box {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+}
+
+.profile-container {
+  display: flex;
+  max-width: 1000px;
+  width: 100%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #2d2d2d;
+  padding: 20px;
+  color: #fff;
+}
+
+.sidebar h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: white;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #ccc;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar ul li.active,
+.sidebar ul li:hover {
+  background-color: #ffc107;
+  color: #000;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.content {
+  flex: 1;
+  padding: 40px;
+}
+
+.content h2 {
+  font-size: 26px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.required-fields {
+  color: red;
+  font-size: 12px;
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.account-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.detail-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.detail-label {
+  min-width: 150px;
+  font-weight: bold;
+  font-size: 18px;
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.detail-value {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.detail-row p {
+  margin: 0;
+  font-size: 18px;
+  color: #666;
+  flex-grow: 1;
+}
+
+.detail-row input {
+  flex-grow: 1;
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.detail-value button {
+  padding: 8px 16px;
+  background-color: #ffc107;
+  color: #000;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.edit-button:hover,
+.save-button:hover {
+  background-color: #e0a800;
+}
+
+@media (max-width: 768px) {
+  .profile-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    text-align: center;
+  }
+
+  .content {
+    padding: 20px;
+  }
+
+  .account-details {
+    flex-direction: column;
+  }
+
+  .detail-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .detail-row input,
+  .detail-value button {
+    width: 100%;
+  }
+}

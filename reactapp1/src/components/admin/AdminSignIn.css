@@ -1,0 +1,92 @@
+/* Container for the signin form */
+.signin1-container {
+    max-width: 400px;
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.signin1-parent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+/* Heading styling */
+.signin1-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Form field styling */
+.signin1-field {
+    margin-bottom: 15px;
+}
+
+.signin1-field label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.signin1-field input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Button styling */
+.signin1-button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.signin1-button:hover {
+    background-color: #0056b3;
+}
+
+/* Error and success message styling */
+.signin1-error {
+    color: #ff0000;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.signin1-success {
+    color: #28a745;
+    margin: 10px 0;
+    text-align: center;
+}
+
+/* Signup link styling */
+.signup1-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.signup1-link p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.signup1-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.signup1-link a:hover {
+    text-decoration: underline;
+}

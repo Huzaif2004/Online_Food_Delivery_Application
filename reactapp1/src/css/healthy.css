@@ -1,0 +1,117 @@
+/* Container styling */
+.diet-plans-container {
+  width: 97%;
+  margin: auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Grid container for diet plans */
+.diet-plans-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 50px;
+  padding: 10px;
+}
+
+.diet-plan-item {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.diet-plan-item:hover {
+  transform: scale(1.05);
+}
+
+.diet-plan-item img {
+  width: 100%;
+  height: 200px; /* Adjust the height as needed */
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Diet plan info styling */
+.diet-plan-info {
+  padding: 10px;
+  text-align: center;
+}
+
+.diet-plan-info h2 {
+  margin: 10px 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.diet-plan-info p {
+  color: #666;
+}
+
+/* Styling for diet plan details */
+.diet-plan-details {
+  margin-top: 20px;
+}
+
+.diet-plan-details h2 {
+  font-size: 24px;
+  color: #444;
+}
+
+.diet-plan-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* Grid container for menu items */
+.diet-menu-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.diet-menu-item {
+  text-align: center;
+}
+
+.diet-menu-image {
+  width: 100%;
+  height: 150px; /* Adjust the height as needed */
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.diet-menu-info {
+  padding: 10px;
+}
+
+.diet-menu-info h3 {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.diet-menu-info p {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Responsive styling */
+@media(max-width:1200px) {
+  .diet-plans-grid {
+      grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media(max-width:900px) {
+  .diet-plans-grid {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(max-width:650px) {
+  .diet-plans-grid {
+      grid-template-columns: 1fr;
+  }
+}

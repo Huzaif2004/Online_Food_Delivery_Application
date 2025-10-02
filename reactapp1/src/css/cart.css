@@ -1,0 +1,157 @@
+
+#custom-cart-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh; 
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f1f3f5; 
+}
+
+#custom-cart-container {
+  width: 100%;
+  max-width: 600px; 
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+#custom-cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#custom-cart-header h2 {
+  font-size: 1.5rem;
+  margin: 0;
+  color: #343a40;
+}
+
+#custom-cart-header a {
+  color: #d9534f;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#custom-cart-header a:hover {
+  text-decoration: underline;
+}
+
+/* Cart item styling */
+#custom-cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+#custom-cart-item:last-child {
+  border-bottom: none;
+}
+
+#custom-cart-item-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+#custom-cart-item-details {
+  flex: 1;
+  margin-left: 10px;
+}
+
+#custom-cart-item-name {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0;
+  color: #212529;
+}
+
+#custom-cart-item-size {
+  font-size: 0.875rem;
+  color: #6c757d;
+  margin: 5px 0;
+}
+
+#custom-cart-item-veg {
+  color: var(--veg-color, green); 
+  font-weight: bold;
+}
+
+#custom-cart-item-price {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+
+#custom-cart-controls {
+  display: flex;
+  align-items: center;
+}
+
+#custom-decrement-button,
+#custom-increment-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+#custom-decrement-button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+#custom-cart-quantity {
+  margin: 0 10px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+
+#custom-cart-footer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#custom-total-items {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #212529;
+}
+
+#custom-subtotal {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #212529;
+}
+
+#custom-checkout-button {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease-in-out;
+}
+
+#custom-checkout-button:hover {
+  background-color: #218838;
+}

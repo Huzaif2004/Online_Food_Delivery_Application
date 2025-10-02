@@ -1,0 +1,50 @@
+.nav-link-icon
+{
+    margin-right: 10px;
+}
+.drp .dropdown-toggle {
+    color: black; /* Text color */
+    background-color: white; /* Background color */
+    padding: 8px 12px; /* Padding */
+    border-radius: 5px; /* Rounded corners */
+    font-weight: bold; /* Bold text */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.drp .dropdown-toggle:hover
+{
+    background-color: #268745; /* Darker background on hover or focus */
+    color: black; /* Text color */
+}
+
+.drp .dropdown-menu {
+    padding: 10px; /* Padding */
+    border-radius: 8px; /* Rounded corners */
+    background-color: #f8f9fa; /* Light background color */
+    border: 1px solid #ddd; /* Border */
+}
+
+.drp .dropdown-item {
+    color: #343a40; /* Dark text color */
+    padding: 10px 20px; /* Padding */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.drp .dropdown-item:hover {
+    background-color: #007bff; /* Blue background on hover */
+    color: white; /* White text on hover */
+}
+.custom-search-button {
+    background-color: green; /* Green background */
+    border-color: green; /* Green border */
+    color: white; /* White text */
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.custom-search-button:hover {
+    background-color: darkgreen; /* Dark green background on hover */
+    border-color: darkgreen; /* Dark green border on hover */
+    color: white; /* Ensure text remains white */
+}
+
