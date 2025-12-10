@@ -1,11 +1,11 @@
-# 🍴 Online Food Delivery Application
+Online Food Delivery Application
 
-A full-stack web application with **React (Frontend)** and **Spring Boot (Backend)**.  
+A full-stack web application with React (Frontend) and Spring Boot (Backend).  
 It allows users to browse menu items, check nutritional details, choose diet-based menus, and place orders.
 
 ---
 
-## 🚀 Features
+## Features
 - Browse food items with nutritional info
 - Diet-based menu options (vegan, keto, etc.)
 - Cart and order management
@@ -13,7 +13,7 @@ It allows users to browse menu items, check nutritional details, choose diet-bas
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 - **Frontend**: React, JavaScript, CSS  
 - **Backend**: Spring Boot (Java), REST APIs  
 - **Database**: MySQL  
