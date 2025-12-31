@@ -19,7 +19,7 @@ A full-stack web application built using React for the frontend and Spring Boot 
 
 ---
 
-**Project Structure**
+**Project Structure**    
 Online_Food_Delivery_Application/   
 ├── reactapp1/ # React frontend   
 │ ├── public/ # Static files    
@@ -34,17 +34,17 @@ Online_Food_Delivery_Application/
 └── README.md     
 
 
-**1 Clone the repository**
+**1 Clone the repository**    
     ```bash
     git clone https://github.com/Huzaif2004/Online_Food_Delivery_Application.git
     cd Online_Food_Delivery_Application
 
-**2 Run the Backend**
+**2 Run the Backend**    
 
 cd Backend
 mvn spring-boot:run
 
-**3️ Run the Frontend**
+**3️ Run the Frontend**   
 cd reactapp1
 npm install
 npm start
