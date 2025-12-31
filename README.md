@@ -5,15 +5,14 @@ It allows users to browse menu items, check nutritional details, choose diet-bas
 
 ---
 
-## Features
+**Features**
 - Browse food items with nutritional info
 - Diet-based menu options (vegan, keto, etc.)
 - Cart and order management
 - REST APIs for backend communication
 
----
 
-##  Tech Stack
+**Tech Stack**
 - **Frontend**: React, JavaScript, CSS  
 - **Backend**: Spring Boot (Java), REST APIs  
 - **Database**: MySQL  
@@ -21,7 +20,7 @@ It allows users to browse menu items, check nutritional details, choose diet-bas
 
 ---
 
-## 📂 Project Structure
+**Project Structure**
 Online_Food_Delivery_Application/
 ├── reactapp1/ # React frontend
 │ ├── public/ # Static files
@@ -36,20 +35,17 @@ Online_Food_Delivery_Application/
 └── README.md
 
 
-
----
-
-1️⃣ Clone the repository
+**1 Clone the repository**
 ```bash
 git clone https://github.com/Huzaif2004/Online_Food_Delivery_Application.git
 cd Online_Food_Delivery_Application
 
-2️⃣ Run the Backend
+**2 Run the Backend**
 
 cd Backend
 mvn spring-boot:run
 
-3️⃣ Run the Frontend
+**3️ Run the Frontend**
 cd reactapp1
 npm install
 npm start
