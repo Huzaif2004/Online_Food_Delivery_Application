@@ -1,4 +1,4 @@
-Online Food Delivery Application
+**Online Food Delivery Application**
 
 A full-stack web application with React (Frontend) and Spring Boot (Backend).  
 It allows users to browse menu items, check nutritional details, choose diet-based menus, and place orders.
@@ -21,24 +21,24 @@ It allows users to browse menu items, check nutritional details, choose diet-bas
 ---
 
 **Project Structure**
-Online_Food_Delivery_Application/
-├── reactapp1/ # React frontend
-│ ├── public/ # Static files
-│ ├── src/ # React source code
-│ ├── package.json # React dependencies
+Online_Food_Delivery_Application/   
+├── reactapp1/ # React frontend   
+│ ├── public/ # Static files    
+│ ├── src/ # React source code    
+│ ├── package.json # React dependencies   
 │
-├── Backend/ # Spring Boot backend
-│ ├── src/ # Java + resources
-│ ├── pom.xml # Maven dependencies
+├── Backend/ # Spring Boot backend    
+│ ├── src/ # Java + resources    
+│ ├── pom.xml # Maven dependencies    
 │
-├── .gitignore
-└── README.md
+├── .gitignore     
+└── README.md     
 
 
 **1 Clone the repository**
 ```bash
 git clone https://github.com/Huzaif2004/Online_Food_Delivery_Application.git
-cd Online_Food_Delivery_Application
+cd Online_Food_Delivery_Application```
 
 **2 Run the Backend**
 
