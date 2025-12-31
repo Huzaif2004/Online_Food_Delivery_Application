@@ -35,19 +35,19 @@ Online_Food_Delivery_Application/
 
 
 **1 Clone the repository**    
-    ```bash
-    git clone https://github.com/Huzaif2004/Online_Food_Delivery_Application.git
-    cd Online_Food_Delivery_Application
+    
+- git clone https://github.com/Huzaif2004/Online_Food_Delivery_Application.git      
+- cd Online_Food_Delivery_Application         
 
 **2 Run the Backend**    
 
-cd Backend
-mvn spring-boot:run
+- cd Backend
+- mvn spring-boot:run
 
 **3️ Run the Frontend**   
-cd reactapp1
-npm install
-npm start
+- cd reactapp1
+- npm install
+- npm start
 
 **Access**
 
