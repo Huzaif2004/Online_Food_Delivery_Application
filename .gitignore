@@ -17,8 +17,7 @@ Backend/.env
 # Local Spring Boot configuration
 Backend/src/main/resources/application.properties
 
-# Optional: local profile-specific configuration
-Backend/src/main/resources/application-local.properties
+
 
 
 # ==========================================
@@ -35,7 +34,7 @@ Backend/src/main/resources/application-local.properties
 
 # Eclipse / Java compiled output
 bin/
-
+workspace/
 # Spring Tool Suite
 .sts4-cache/
 
