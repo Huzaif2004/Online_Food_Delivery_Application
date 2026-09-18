@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.model.HotelModel;
+import com.example.demo.model.Restaurant;
 import com.example.demo.model.MenuItem;
 import com.example.demo.service.HotelService;
 
@@ -26,13 +26,13 @@ public class HotelController {
 
     @CrossOrigin
     @GetMapping("/hotels")
-    public List<HotelModel> getMethodName() {
+    public List<Restaurant> getMethodName() {
         return ser.getHotels();
     }
 
     @CrossOrigin
     @PostMapping("/post")
-    public HotelModel postMethodName(@RequestBody HotelModel entity) {
+    public Restaurant postMethodName(@RequestBody Restaurant entity) {
         //TODO: process POST request
         
         return ser.postHotel(entity);
@@ -46,13 +46,13 @@ public String deleteHotel(@PathVariable("id") Long id) {
    
     @CrossOrigin
     @GetMapping("/api/gethotels/offers")
-    public List<HotelModel>findByOffers()
+    public List<Restaurant>findByOffers()
     {
       return ser.findByOffers();
     }
     @CrossOrigin
     @GetMapping("/api/gethotels/{city}")
-    public List<HotelModel>findByCity(@PathVariable String city)
+    public List<Restaurant>findByCity(@PathVariable String city)
     {
         return ser.findByCity(city);
     }
@@ -64,7 +64,7 @@ public String deleteHotel(@PathVariable("id") Long id) {
         return ser.findByHotelId(id);
     }
     @GetMapping("/api/gethotels")
-    public List<HotelModel>findByMenuItemName(@RequestParam(name="searchTerm") String searchTerm)
+    public List<Restaurant>findByMenuItemName(@RequestParam(name="searchTerm") String searchTerm)
     {
         return ser.findByMenuItemName(searchTerm);
     }

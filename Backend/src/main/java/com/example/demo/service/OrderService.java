@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.model.HotelModel;
+import com.example.demo.model.Restaurant;
 import com.example.demo.model.Order;
 import com.example.demo.model.User;
 import com.example.demo.repository.HotelRepository;
@@ -38,7 +38,7 @@ public class OrderService {
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new RuntimeException("User not found"));
 
-        HotelModel hotel = hotelRepository.findById(hotelId)
+        Restaurant hotel = hotelRepository.findById(hotelId)
                 .orElseThrow(() -> new RuntimeException("Hotel not found"));
 
         Order order = new Order();
