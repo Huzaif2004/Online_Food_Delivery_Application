@@ -1,18 +1,21 @@
 package com.example.demo.model;
 
-import java.util.Date;
-import java.util.Map;
+import java.time.LocalDateTime;
+import java.util.Collections;
+import java.util.List;
 
-import jakarta.persistence.CollectionTable;
-import jakarta.persistence.Column;
-import jakarta.persistence.ElementCollection;
+import com.example.demo.enums.OrderStatus;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.MapKeyColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -20,60 +23,83 @@ import jakarta.persistence.Table;
 public class Order{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long orderId;
 
     @ManyToOne
-    @JoinColumn(name="user_id")
-    User user;
+    @JoinColumn(name="account_id")
+    private Account account;
 
     @ManyToOne
-    @JoinColumn(name="hotel_id")
-    HotelModel hotelModel;
+    @JoinColumn(name="restaurant_id")
+    private Restaurant restaurant;
 
-    @ElementCollection
-    @CollectionTable(name = "order_items", joinColumns = @JoinColumn(name = "order_id"))
-    @MapKeyColumn(name = "menu_item_id")
-    @Column(name = "quantity")
-    private Map<Long, Integer> items;  // Use Long for MenuItem IDs
+    @OneToMany(mappedBy="order",cascade=CascadeType.ALL)
+    private List<OrderItem> orderItems;
 
-    Date orderDate;
-    double totalPrice;
-    public Long getId() {
-        return id;
-    }
-    public void setId(Long id) {
-        this.id = id;
-    }
-    public User getUser() {
-        return user;
-    }
-    public void setUser(User user) {
-        this.user = user;
-    }
-    public HotelModel getHotelModel() {
-        return hotelModel;
-    }
-    public void setHotelModel(HotelModel hotelModel) {
-        this.hotelModel = hotelModel;
-    }
-    public Map<Long, Integer> getItems() {
-        return items;
-    }
-    public void setItems(Map<Long, Integer> items) {
-        this.items = items;
-    }
-    public Date getOrderDate() {
-        return orderDate;
-    }
-    public void setOrderDate(Date orderDate) {
-        this.orderDate = orderDate;
-    }
-    public double getTotalPrice() {
-        return totalPrice;
-    }
-    public void setTotalPrice(double totalPrice) {
-        this.totalPrice = totalPrice;
-    }
+    @Enumerated(EnumType.STRING)
+    private OrderStatus orderStatus;
+    private LocalDateTime orderDate;
+    private double totalPrice;
+    
+	public Order(Account account, Restaurant restaurant,
+			double totalPrice) {
+		super();
+		this.account = account;
+		this.restaurant = restaurant;
+		this.orderDate = LocalDateTime.now();
+		this.orderStatus=OrderStatus.CREATED;
+	}
+
+	public Order() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Long getOrderId() {
+		return orderId;
+	}
+
+	public Account getAccount() {
+		return account;
+	}
+
+	public Restaurant getRestaurant() {
+		return restaurant;
+	}
+
+	public List<OrderItem> getOrderItems() {
+		return Collections.unmodifiableList(orderItems);
+	}
+
+	public OrderStatus getOrderStatus() {
+		return orderStatus;
+	}
+
+	public LocalDateTime getOrderDate() {
+		return orderDate;
+	}
+
+	public double getTotalPrice() {
+		return totalPrice;
+	}
+	public void addItems(OrderItem item) {
+		if(this.orderStatus!=OrderStatus.CREATED) {
+			throw new IllegalStateException("Cannot modify items after order is confirmed");
+		}
+		this.orderItems.add(item);
+	}
+	public void setTotalAmount(double amount) {
+		if(amount<0) {
+			throw new InvalidTotalAmountException("Total Amount must be greater than 0");
+		}
+		this.totalPrice=amount;
+	}
+    
+    
+    
+    
+   
+
 
     
     

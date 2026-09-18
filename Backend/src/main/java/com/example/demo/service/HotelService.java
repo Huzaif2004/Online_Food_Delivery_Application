@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.model.HotelModel;
+import com.example.demo.model.Restaurant;
 import com.example.demo.model.MenuItem;
 import com.example.demo.repository.HotelRepository;
 import com.example.demo.repository.MenuRepo;
@@ -16,12 +16,12 @@ public class HotelService {
      HotelRepository repo;
      @Autowired
      MenuRepo menrepo;
-    public HotelModel postHotel(HotelModel hotel)
+    public Restaurant postHotel(Restaurant hotel)
     {
        return repo.save(hotel);
     }
 
-    public List<HotelModel> getHotels()
+    public List<Restaurant> getHotels()
     {
        
         return repo.findAll();
@@ -31,9 +31,9 @@ public class HotelService {
         repo.deleteById(id);
         return "deleted";
     }
-    public HotelModel editUser(HotelModel hotel,Long id)
+    public Restaurant editUser(Restaurant hotel,Long id)
     {
-        HotelModel u=repo.findById(id).orElse(null);
+        Restaurant u=repo.findById(id).orElse(null);
         if(u!=null)
         {
             u.setHotelName(hotel.getHotelName());
@@ -48,15 +48,15 @@ public class HotelService {
     {
         return menrepo.findByHotelId(id);
     }
-    public List<HotelModel>findByOffers()
+    public List<Restaurant>findByOffers()
     {
         return repo.findByOffers();
     }
-    public List<HotelModel>findByCity(String city)
+    public List<Restaurant>findByCity(String city)
     {
         return repo.findByCity(city);
     }
-    public List<HotelModel>findByMenuItemName(String searchTerm)
+    public List<Restaurant>findByMenuItemName(String searchTerm)
     {
         return repo.findByMenuItemName(searchTerm);
     }

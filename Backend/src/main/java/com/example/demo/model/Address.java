@@ -1,7 +1,5 @@
 package com.example.demo.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -11,68 +9,59 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="address")
+@Table(name="addresses")
 public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
-    String addressLine;
-    String city;
-    String state;
-    String postalCode;
+    private Long addressId;
+    private String addressLine;
+    private String city;
+    private String state;
+    private String postalCode;
     
     @ManyToOne
-    @JsonBackReference
-    @JoinColumn(name="user_id",nullable=false)
-    User user;
+    @JoinColumn(name="account_id",nullable=false)
+    private Account account;
 
-    public Long getId() {
-        return id;
-    }
+	public Address(String addressLine, String city, String state, String postalCode, Account account) {
+		super();
+		this.addressLine = addressLine;
+		this.city = city;
+		this.state = state;
+		this.postalCode = postalCode;
+		this.account = account;
+	}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public Address() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
-    public String getAddressLine() {
-        return addressLine;
-    }
+	public Long getAddressId() {
+		return addressId;
+	}
 
-    public void setAddressLine(String addressLine) {
-        this.addressLine = addressLine;
-    }
+	public String getAddressLine() {
+		return addressLine;
+	}
 
-    public String getCity() {
-        return city;
-    }
+	public String getCity() {
+		return city;
+	}
 
-    public void setCity(String city) {
-        this.city = city;
-    }
+	public String getState() {
+		return state;
+	}
 
-    public String getState() {
-        return state;
-    }
+	public String getPostalCode() {
+		return postalCode;
+	}
 
-    public void setState(String state) {
-        this.state = state;
-    }
+	public Account getAccount() {
+		return account;
+	}
 
-    public String getPostalCode() {
-        return postalCode;
-    }
-
-    public void setPostalCode(String postalCode) {
-        this.postalCode = postalCode;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
+    
 
     
 
