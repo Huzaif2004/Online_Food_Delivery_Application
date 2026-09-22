@@ -1,10 +1,12 @@
 package com.example.demo.model;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 import com.example.demo.enums.OrderStatus;
+import com.example.demo.exception.InvalidTotalAmountException;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -23,8 +25,8 @@ import jakarta.persistence.Table;
 public class Order{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long orderId;
-
+    private Long orderId;																														
+    
     @ManyToOne
     @JoinColumn(name="account_id")
     private Account account;
@@ -38,16 +40,23 @@ public class Order{
 
     @Enumerated(EnumType.STRING)
     private OrderStatus orderStatus;
+    
+    private String orderIdempotentKey;
     private LocalDateTime orderDate;
     private double totalPrice;
     
 	public Order(Account account, Restaurant restaurant,
-			double totalPrice) {
+			String orderIdempotentKey) {
 		super();
+		if (orderIdempotentKey == null) {
+	        throw new IllegalArgumentException("Order needs an idempotency key");
+	    }
 		this.account = account;
 		this.restaurant = restaurant;
 		this.orderDate = LocalDateTime.now();
 		this.orderStatus=OrderStatus.CREATED;
+		this.orderItems=new ArrayList<>();
+		this.orderIdempotentKey=orderIdempotentKey;
 	}
 
 	public Order() {
@@ -87,13 +96,13 @@ public class Order{
 			throw new IllegalStateException("Cannot modify items after order is confirmed");
 		}
 		this.orderItems.add(item);
+		recalculateOrderTotal();
 	}
-	public void setTotalAmount(double amount) {
-		if(amount<0) {
-			throw new InvalidTotalAmountException("Total Amount must be greater than 0");
-		}
-		this.totalPrice=amount;
+	private void recalculateOrderTotal() {
+		this.totalPrice=orderItems.stream().map(oi->oi.getItemPrice()).reduce(0.0,(a,b)->a+b);
 	}
+	
+	
     
     
     
