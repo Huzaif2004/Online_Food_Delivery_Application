@@ -1,5 +1,9 @@
 package com.example.demo.model;
 
+
+
+import org.springframework.format.annotation.NumberFormat;
+
 import com.example.demo.enums.AccountRole;
 
 import jakarta.persistence.Entity;
@@ -9,6 +13,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name="accounts")
@@ -16,7 +22,10 @@ public class Account {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long accountId;
+
+	@NotEmpty 
 	private String name;
+	@Email
 	private String email;
 	private String phoneNumber;
 	private String password;
