@@ -1,35 +1,54 @@
 package com.example.demo.model;
 
+import java.util.Objects;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name="addresses")
 public class Address {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long addressId;
+
+	@NotNull 
+	@Column(name="address_line",nullable=false)
     private String addressLine;
+
+	@NotNull
+	@Column (name="city",nullable = false)
     private String city;
+
+	@NotNull
+	@Column(name="state",nullable = false)
     private String state;
+
+    @NotNull
+	@Column (name="postal_code",nullable = false)
     private String postalCode;
     
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="account_id",nullable=false)
     private Account account;
 
 	public Address(String addressLine, String city, String state, String postalCode, Account account) {
 		super();
-		this.addressLine = addressLine;
-		this.city = city;
-		this.state = state;
-		this.postalCode = postalCode;
-		this.account = account;
+
+		this.addressLine = Objects.requireNonNull(addressLine, "Address line is required");
+		this.city = Objects.requireNonNull(city, "City is required");
+		this.state = Objects.requireNonNull(state, "State is required");
+		this.postalCode = Objects.requireNonNull(postalCode, "postalCode is required");
+		this.account = Objects.requireNonNull(account,"Account should be linked with address");
 	}
 
 	public Address() {
