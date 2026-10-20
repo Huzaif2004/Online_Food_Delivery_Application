@@ -34,12 +34,12 @@ public class Account {
 
 	@NotBlank(message="Name shouldn't be empty")
 	@Size(min=2,max=50,message="Name length should be atleast 2 and atmost 50")
-	@Column(nullable=false)
+	@Column(name="name",nullable=false)
 	private String name;
 	
 	@NotBlank(message="Email shouldn't be empty")
 	@Email
-	@Column(nullable=false,name="email")
+	@Column(name="email",nullable=false)
 	private String email;
 	
 	@NotBlank(message = "Phone number is required")
